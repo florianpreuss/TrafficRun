@@ -1,4 +1,4 @@
-package sample;
+package trafficrun;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,18 +8,24 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+    public static Stage primaryStage;
+    public static Scene startupScene;
+    public static Scene gameScene;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent startupRoot = FXMLLoader.load(getClass().getResource("startup.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent startupRoot = FXMLLoader.load(getClass().getResource("fxml/startup.fxml"));
+        Parent gameRoot = FXMLLoader.load(getClass().getResource("fxml/game.fxml"));
         primaryStage.setTitle("Traffic Run");
 
-        Scene startupScene = new Scene(startupRoot, 498, 278);
-        Scene gameScene = new Scene(root, 1000, 900);
+        Main.startupScene = new Scene(startupRoot, 498, 278);
+        Main.gameScene = new Scene(gameRoot, 1000, 900);
 
         primaryStage.setScene(startupScene);
         primaryStage.setResizable(false);
         primaryStage.show();
+
+        Main.primaryStage = primaryStage;
     }
 
 
