@@ -7,7 +7,8 @@
 <?import javafx.collections.FXCollections?>
 <?import java.lang.String?>
 
-<AnchorPane prefHeight="278.0" prefWidth="498.0" style="-fx-background-image: url('start.gif');" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trafficrun.controller.StartupController">
+<?import javafx.scene.layout.StackPane?>
+<StackPane prefHeight="278.0" prefWidth="498.0" style="-fx-background-image: url('start.gif');" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trafficrun.controller.StartupController">
    <children>
       <Button layoutX="202.0" layoutY="197.0" mnemonicParsing="false" onAction="#startGame" prefHeight="26.0" prefWidth="215.0" text="Spiel Starten">
          <font>
@@ -26,4 +27,4 @@
          </value>
       </ComboBox>
    </children>
-</AnchorPane>
+</StackPane>

@@ -9,9 +9,12 @@ public class StartupController {
     @FXML
     public ComboBox playerSelect;
 
+
+
     @FXML
     private void startGame(ActionEvent event) {
         Main.primaryStage.setScene(Main.gameScene);
         Main.primaryStage.centerOnScreen();
+
     }
 }

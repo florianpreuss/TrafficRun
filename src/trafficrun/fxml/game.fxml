@@ -5,14 +5,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trafficrun.controller.GameController">
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-      <AnchorPane prefHeight="900.0" prefWidth="1000.0" style="-fx-background-image: url('background.png')" />
-   </children>
-</GridPane>
+<?import javafx.scene.layout.StackPane?>
+<StackPane prefHeight="900.0" prefWidth="1000.0" style="-fx-background-image: url('background.png')">
+
+</StackPane>
