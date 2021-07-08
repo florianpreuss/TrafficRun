@@ -1,44 +1,43 @@
 package trafficrun.gameobjects;
 
 import javafx.scene.Node;
-import javafx.scene.image.Image;
 import trafficrun.Main;
 
 public abstract class GameObject {
-    private int posX, posY;
-    private Image image;
-    private Node node;
+    private Node view;
 
-    public boolean goNorth, goSouth, goEast, goWest;
+    public boolean goNorth, goSouth, goEast, goWest, alive;
 
-    public GameObject(int posX, int posY, Image image) {
-        this.posX = posX;
-        this.posY = posY;
-        this.image = image;
+    public GameObject(Node view) {
+        this.view = view;
     }
 
-    private void moveObjectBy(int dx, int dy) {
+    public void moveObjectBy(int dx, int dy) {
         if (dx == 0 && dy == 0) return;
 
-        final double cx = node.getBoundsInLocal().getWidth()  / 2;
-        final double cy = node.getBoundsInLocal().getHeight() / 2;
+        final double cx = view.getBoundsInLocal().getWidth()  / 2;
+        final double cy = view.getBoundsInLocal().getHeight() / 2;
 
-        double x = cx + node.getLayoutX() + dx;
-        double y = cy + node.getLayoutY() + dy;
+        double x = cx + view.getLayoutX() + dx;
+        double y = cy + view.getLayoutY() + dy;
 
         moveObjectTo(x, y);
     }
 
-    private void moveObjectTo(double x, double y) {
-        final double cx = node.getBoundsInLocal().getWidth()  / 2;
-        final double cy = node.getBoundsInLocal().getHeight() / 2;
+    public void moveObjectTo(double x, double y) {
+        final double cx = view.getBoundsInLocal().getWidth()  / 2;
+        final double cy = view.getBoundsInLocal().getHeight() / 2;
 
         if (x - cx >= 0 &&
                 x + cx <= Main.gameScene.getWidth() &&
                 y - cy >= 0 &&
                 y + cy <= Main.gameScene.getHeight()) {
-            node.relocate(x - cx, y - cy);
+            view.setTranslateX(x - cx);
+            view.setTranslateY(y - cy);
         }
     }
 
+    public Node getView() {
+        return view;
+    }
 }
