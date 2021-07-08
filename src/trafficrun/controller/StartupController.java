@@ -10,7 +10,7 @@ import trafficrun.gameobjects.GameObjectPlayer;
 import java.util.List;
 
 public class StartupController {
-    private List<Point2D> playerSpawns = List.of(new Point2D(-290, 430), new Point2D(270, 430));
+    private List<Point2D> playerSpawns = List.of(new Point2D(-290, 430), new Point2D(270, 430), new Point2D(-80, 430), new Point2D(70, 430));
 
     @FXML
     public ComboBox playerSelect;
@@ -18,19 +18,16 @@ public class StartupController {
 
     @FXML
     private void startGame(ActionEvent event) {
+        int playerAmount = Integer.parseInt(playerSelect.getValue().toString().split(" ")[0]);
+
         Main.primaryStage.setScene(Main.gameScene);
         Main.primaryStage.centerOnScreen();
 
-        GameObjectPlayer player = new GameObjectPlayer();
-        GameObjectPlayer player2 = new GameObjectPlayer();
-
-        Main.gameRoot.getChildren().add(player.getView());
-        Main.gameRoot.getChildren().add(player2.getView());
-
-        player.moveObjectTo(playerSpawns.get(0).getX(), playerSpawns.get(0).getY());
-        player2.moveObjectTo(playerSpawns.get(1).getX(), playerSpawns.get(1).getY());
-        player2.moveObjectTo(playerSpawns.get(1).getX(), playerSpawns.get(1).getY());
-
-        System.out.println(Main.gameScene.getHeight());
+        for (int i = 0; i < playerAmount; i++) {
+            GameObjectPlayer player = new GameObjectPlayer();
+            Main.gameRoot.getChildren().add(player.getView());
+            Main.players.add(player);
+            player.moveObjectTo((i == 2 && playerAmount== 3) ? 0.0 : playerSpawns.get(i).getX(), playerSpawns.get(i).getY());
+        }
     }
 }
