@@ -17,7 +17,7 @@ public class Main extends Application {
 
     public static List<GameObjectPlayer> players = new ArrayList<>();
     public static List<GameObjectPlayer> cars = new ArrayList<>();
-    public static List<String> imageFiles = List.of("car_1.png");
+    public static List<String> imageFiles = List.of("car_1.png", "car_black.png", "car_police.png");
 
     public static Stage primaryStage;
     public static Scene startupScene;

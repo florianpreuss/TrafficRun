@@ -6,6 +6,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <?import javafx.scene.layout.StackPane?>
-<StackPane prefHeight="900.0" prefWidth="1000.0" style="-fx-background-image: url('background.png')">
+<StackPane prefHeight="900.0" prefWidth="1000.0" style="-fx-background-image: url('background_new.png')">
 
 </StackPane>

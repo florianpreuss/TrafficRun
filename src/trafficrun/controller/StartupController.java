@@ -33,6 +33,6 @@ public class StartupController {
 
         GameObjectCar car = new GameObjectCar();
         Main.gameRoot.getChildren().add(car.getView());
-        car.moveObjectTo(100, 100);
+        car.moveObjectTo(-100, 330);
     }
 }
