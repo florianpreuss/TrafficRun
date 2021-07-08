@@ -8,3 +8,5 @@ public class GameObjectPlayer extends GameObject {
         super(new Circle(20, 20, 20, Color.RED));
     }
 }
+
+
