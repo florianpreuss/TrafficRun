@@ -13,6 +13,6 @@ import java.util.Random;
 
 public class GameObjectCar extends GameObject {
     public GameObjectCar() {
-        super(new ImageView(Main.imageFiles.get(new Random().nextInt(Main.imageFiles.size()- 1))));
+        super(new ImageView(Main.imageFiles.get(new Random().nextInt(Main.imageFiles.size()))));
     }
 }

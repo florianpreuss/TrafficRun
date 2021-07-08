@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.Point2D;
 import javafx.scene.control.ComboBox;
 import trafficrun.Main;
+import trafficrun.gameobjects.GameObjectCar;
 import trafficrun.gameobjects.GameObjectPlayer;
 
 import java.util.List;
@@ -29,5 +30,9 @@ public class StartupController {
             Main.players.add(player);
             player.moveObjectTo((i == 2 && playerAmount== 3) ? 0.0 : playerSpawns.get(i).getX(), playerSpawns.get(i).getY());
         }
+
+        GameObjectCar car = new GameObjectCar();
+        Main.gameRoot.getChildren().add(car.getView());
+        car.moveObjectTo(100, 100);
     }
 }
