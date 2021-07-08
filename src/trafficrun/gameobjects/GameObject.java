@@ -28,9 +28,9 @@ public abstract class GameObject {
         final double cx = view.getBoundsInLocal().getWidth()  / 2;
         final double cy = view.getBoundsInLocal().getHeight() / 2;
 
-        if (x - cx >= 0 &&
+        if (
                 x + cx <= Main.gameScene.getWidth() &&
-                y - cy >= 0 &&
+
                 y + cy <= Main.gameScene.getHeight()) {
             view.setTranslateX(x - cx);
             view.setTranslateY(y - cy);
