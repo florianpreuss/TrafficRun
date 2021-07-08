@@ -5,19 +5,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import trafficrun.gameobjects.GameObjectPlayer;
 
+import javax.imageio.ImageIO;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Main extends Application {
 
-    public List<GameObjectPlayer> players = new ArrayList<>();
-    public List<GameObjectPlayer> cars = new ArrayList<>();
+    public static List<GameObjectPlayer> players = new ArrayList<>();
+    public static List<GameObjectPlayer> cars = new ArrayList<>();
 
     public static Stage primaryStage;
     public static Scene startupScene;
