@@ -18,8 +18,8 @@ public abstract class GameObject {
         final double cx = view.getBoundsInLocal().getWidth()  / 2;
         final double cy = view.getBoundsInLocal().getHeight() / 2;
 
-        double x = cx + view.getLayoutX() + dx;
-        double y = cy + view.getLayoutY() + dy;
+        double x = cx + view.getTranslateX() + dx;
+        double y = cy + view.getTranslateY() + dy;
 
         moveObjectTo(x, y);
     }
@@ -28,9 +28,13 @@ public abstract class GameObject {
         final double cx = view.getBoundsInLocal().getWidth()  / 2;
         final double cy = view.getBoundsInLocal().getHeight() / 2;
 
-        if (x + cx <= Main.gameScene.getWidth() &&
-                y + cy <= Main.gameScene.getHeight()) {
+        double width = (Main.gameScene.getWidth() / 2) * (x < 0 ? (-1) : 1) + cx;
+        double height = (Main.gameScene.getHeight() / 2) * (y < 0 ? (-1) : 1) + cy;
+
+        if (((width >= 0 && x <= width) || (width < 0 && x >= width))) {
             view.setTranslateX(x - cx);
+        }
+        if (((height >= 0 && y <= height) || (height < 0 && y >= height))) {
             view.setTranslateY(y - cy);
         }
     }
