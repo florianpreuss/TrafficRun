@@ -28,8 +28,8 @@ public class StartupController {
         Main.mediaPlayer.stop();
         Main.mediaPlayer.setStartTime(Duration.millis(11500));
         Main.mediaPlayer.setStopTime(Duration.millis(91500));
-        //Main.mediaPlayer.play();
-        Main.mediaPlayer.setRate(1.1);
+        Main.mediaPlayer.play();
+        Main.mediaPlayer.setRate(1.0);
 
         Main.primaryStage.setScene(Main.gameScene);
         Main.primaryStage.centerOnScreen();
