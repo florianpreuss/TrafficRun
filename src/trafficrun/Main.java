@@ -16,13 +16,15 @@ import trafficrun.gameobjects.GameObjectPlayer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Main extends Application {
 
     public static List<GameObjectPlayer> players = new ArrayList<>();
     public static List<GameObjectCar> cars = new ArrayList<>();
-    public static List<String> imageFiles = List.of("car_black.png", "car_police.png");
-    public static List<Color> colors = List.of(Color.GREEN, Color.YELLOW, Color.AQUA, Color.BLUE, Color.PINK, Color.BROWN, Color.GRAY);
+    public static List<String> imageFiles = Stream.of("car_black.png", "car_police.png").collect(Collectors.toList());
+    public static List<Color> colors = Stream.of(Color.GREEN, Color.YELLOW, Color.AQUA, Color.BLUE, Color.PINK, Color.BROWN, Color.GRAY).collect(Collectors.toList());
 
     public static Stage primaryStage;
     public static Scene startupScene;

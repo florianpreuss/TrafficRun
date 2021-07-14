@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="TrafficRun">
+    <output-path>$PROJECT_DIR$/out/artifacts/TrafficRun</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="trafficrun.Main" />
+        <option name="description" value="" />
+        <option name="height" value="281" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="TrafficRun" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+        <option name="width" value="500" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="TrafficRun.jar">
+        <element id="module-output" name="TrafficRun" />
+      </element>
+    </root>
+  </artifact>
+</component>
